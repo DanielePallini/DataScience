@@ -1,3 +1,4 @@
+[English Version](README.en.md)
 # Descrizione dei Progetti di Data Science
 Questa repository racchiude 5 diversi progetti svolti per il corso di Data Science. Ciascun progetto è relativo ad un file PDF.
 

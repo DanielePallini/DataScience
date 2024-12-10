@@ -2,90 +2,71 @@
 #### If you want to learn more, please see the docs: https://rasa.com/docs/rasa/testing-your-assistant
 
 stories:
-- story: happy path 1
+- story: A test where a user greets and asks for info
   steps:
   - user: |
-      hello there!
+      ciao
     intent: greet
   - action: utter_greet
   - user: |
-      amazing
-    intent: mood_great
-  - action: utter_happy
+      info su [Bremer](player_name)
+    intent: find_info
+  - action: action_find_info
+  - action: action_choose_info
+  - user: /info-player{{"info":"transfer"}}
+    intent: info-player
+  - action: action_info_player
+  - action: action_choose_info
+  - user: /info-player{{"info":"stats"}}
+    intent: info-player
+  - action: action_info_player
+  - action: action_choose_info
 
-- story: happy path 2
+
+- story: A test where a user asks for info
   steps:
   - user: |
-      hello there!
-    intent: greet
-  - action: utter_greet
+      info su [Tonali](player_name)
+    intent: find_info
+  - action: action_find_info
+  - action: action_choose_info
+  - user: /info-player{{"info":"info"}}
+    intent: info-player
+  - action: action_info_player
+  - action: action_choose_info
+  - user: /info-player{{"info":"stats"}}
+    intent: info-player
+  - action: action_info_player
+  - action: action_choose_info
+
+- story: A test where a user asks for a team
+  steps:
   - user: |
-      amazing
-    intent: mood_great
-  - action: utter_happy
+      vorrei la rosa del [Monza](team_name)
+    intent: find_team
+  - action: action_find_team
+
+- story: A test where a user asks for help and info about a team
+  steps:
   - user: |
-      bye-bye!
+      Cosa ti posso chiedere?
+    intent: help
+  - action: utter_send_help  
+  - user: |
+      vorrei la rosa del [Milan](team_name)
+    intent: find_team
+  - action: action_find_team
+
+- story: Saluti
+  steps:
+  - user: |
+      ok grazie
     intent: goodbye
   - action: utter_goodbye
 
-- story: sad path 1
+- story: Test where a user asks if he's talking to a bot
   steps:
   - user: |
-      hello
-    intent: greet
-  - action: utter_greet
-  - user: |
-      not good
-    intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - user: |
-      yes
-    intent: affirm
-  - action: utter_happy
-
-- story: sad path 2
-  steps:
-  - user: |
-      hello
-    intent: greet
-  - action: utter_greet
-  - user: |
-      not good
-    intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - user: |
-      not really
-    intent: deny
-  - action: utter_goodbye
-
-- story: sad path 3
-  steps:
-  - user: |
-      hi
-    intent: greet
-  - action: utter_greet
-  - user: |
-      very terrible
-    intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - user: |
-      no
-    intent: deny
-  - action: utter_goodbye
-
-- story: say goodbye
-  steps:
-  - user: |
-      bye-bye!
-    intent: goodbye
-  - action: utter_goodbye
-
-- story: bot challenge
-  steps:
-  - user: |
-      are you a bot?
+      Sei un bot?
     intent: bot_challenge
   - action: utter_iamabot

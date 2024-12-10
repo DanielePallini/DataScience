@@ -1,0 +1,125 @@
+[
+  {
+    "text": "hey",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "player_name",
+        "start": 0,
+        "end": 3,
+        "value": "hey",
+        "extractor": "RegexEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "buongiorno",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "player_name",
+        "start": 0,
+        "end": 10,
+        "value": "buongiorno",
+        "extractor": "RegexEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "Cosa fai?",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "player_name",
+        "start": 5,
+        "end": 8,
+        "value": "fai",
+        "extractor": "RegexEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "ho bisogno che tu mi dia informazioni su Kessie",
+    "entities": [
+      {
+        "start": 41,
+        "end": 47,
+        "value": "Kessie",
+        "entity": "player_name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "player_name",
+        "start": 41,
+        "end": 47,
+        "confidence_entity": 0.9993546605110168,
+        "value": "Kessie",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "player_name",
+        "start": 11,
+        "end": 14,
+        "value": "che",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "player_name",
+        "start": 21,
+        "end": 24,
+        "value": "dia",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "player_name",
+        "start": 41,
+        "end": 47,
+        "value": "Kessie",
+        "extractor": "RegexEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "quanto vale la Roma?",
+    "entities": [
+      {
+        "start": 15,
+        "end": 19,
+        "value": "Roma",
+        "entity": "team_name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "team_name",
+        "start": 15,
+        "end": 19,
+        "confidence_entity": 0.9987350106239319,
+        "value": "Roma",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "team_name",
+        "start": 15,
+        "end": 19,
+        "value": "Roma",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "player_name",
+        "start": 7,
+        "end": 11,
+        "value": "vale",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "player_name",
+        "start": 15,
+        "end": 19,
+        "value": "Roma",
+        "extractor": "RegexEntityExtractor"
+      }
+    ]
+  }
+]

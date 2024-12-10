@@ -1,0 +1,50 @@
+[
+  {
+    "text": "info su Bremer",
+    "entities": [
+      {
+        "start": 8,
+        "end": 14,
+        "value": "Bremer",
+        "entity": "player_name"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "info su Tonali",
+    "entities": [
+      {
+        "start": 8,
+        "end": 14,
+        "value": "Tonali",
+        "entity": "player_name"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "vorrei la rosa del Monza",
+    "entities": [
+      {
+        "start": 19,
+        "end": 24,
+        "value": "Monza",
+        "entity": "team_name"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "vorrei la rosa del Milan",
+    "entities": [
+      {
+        "start": 19,
+        "end": 24,
+        "value": "Milan",
+        "entity": "team_name"
+      }
+    ],
+    "predicted_entities": []
+  }
+]

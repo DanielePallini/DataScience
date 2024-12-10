@@ -1,52 +1,90 @@
-version: "3.1"
-
+version: '3.1'
+config:
+  store_entities_as_slots: true
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
 intents:
-  - greet
-  - goodbye
-  - affirm
-  - deny
-  - mood_great
-  - mood_unhappy
-  - bot_challenge
-  - search_player
-
+- bot_challenge:
+    use_entities: true
+- find_info:
+    use_entities: true
+- find_team:
+    use_entities: true    
+- goodbye:
+    use_entities: true
+- greet:
+    use_entities: true
+- help:
+    use_entities: true
+- out_of_scope:
+    use_entities: true
+- start:
+    use_entities: true
+- stop:
+    use_entities: true
+- info-player:
+    use_entities: true
+- stats-player:
+    use_entities: true      
 entities:
-  - player_name
+- player_name
+- team_name
+- info
 slots:
   player_name:
     type: text
     mappings:
-     - type: from_entity
-       entity: player_name 
-
+    - type: from_entity
+      entity: player_name
+  team_name:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: team_name    
+  info:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: info      
 responses:
+  utter_start:
+  - text: Benvenuto! Mi chiamo Mark, sono un bot specializzato nelle curiosità sul mondo del calcio. Posso fornire statistiche e informazioni su calciatori e squadre di tutto il mondo. Come posso esserti utile? 
+  utter_stop:
+  - text: A presto!
   utter_greet:
-  - text: "Hey! How are you?"
-
-  utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
-
+  - text: Ciao! Come posso aiutarti?
   utter_did_that_help:
-  - text: "Did that help you?"
-
-  utter_happy:
-  - text: "Great, carry on!"
-
+  - text: Ti è stato utile?
   utter_goodbye:
-  - text: "Bye"
-
+  - text: A presto!
   utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
-
+  - text: Sono un bot basato su Rasa.
+  utter_send_help:
+  - text: Puoi chiedermi maggiori dettagli su calciatori e squadre di tutto il mondo. Rigurdo i calciatori, posso fornire informazioni personali, statistiche della stagione corrente e la cronologia dei trasferimenti. Riguardo le squadre, posso elencarti la rosa attuale e il valore di mercato associato.
+  utter_choose_info:
+  - buttons:
+    - title: Informazioni personali
+      payload: /info-player{{"info":"info"}}
+    - title: Statistiche calciatore
+      payload: /info-player{{"info":"stats"}}
+    - title: Cronologia trasferimenti
+      payload: /info-player{{"info":"transfer"}}  
+    text: Quali informazioni ti interessano? In alternativa, puoi chiedermi di cercare qualcos'altro.
+    button_type: vertical 
+  utter_fallback:
+  - text: Mi dispiace, non sono riuscito a capire. Per favore riformula la frase.
 actions:
-  - utter_greet
-  - utter_cheer_up
-  - utter_did_that_help
-  - utter_happy
-  - utter_goodbye
-  - utter_iamabot
-  - action_search_player
-session_config:
-  session_expiration_time: 60
-  carry_over_slots_to_new_session: true
+- action_find_info
+- action_find_team
+- action_choose_info
+- action_info_player
+- action_stats_player
+- action_my_fallback
+- utter_did_that_help
+- utter_fallback
+- utter_goodbye
+- utter_greet
+- utter_iamabot
+- utter_send_help
+- utter_choose_info

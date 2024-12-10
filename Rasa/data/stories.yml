@@ -2,39 +2,64 @@ version: "3.1"
 
 stories:
 
-- story: happy path
+- story: find_information path
   steps:
   - intent: greet
   - action: utter_greet
-  - intent: mood_great
-  - action: utter_happy
+  - intent: find_info
+  - action: action_find_info
+  - action: action_choose_info
+  - intent: info-player
+  - action: action_info_player
+  - action: action_choose_info
+  
+- story: find_teams path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: find_team
+  - action: action_find_team
 
-- story: sad path 1
+- story: find_information_short path
   steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: affirm
-  - action: utter_happy
+  - intent: find_info
+  - action: action_find_info
+  - action: action_choose_info
+  - intent: info-player
+  - action: action_info_player
+  - action: action_choose_info
 
-- story: sad path 2
+- story: find_teams_short path
   steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: deny
-  - action: utter_goodbye
+  - intent: find_team
+  - action: action_find_team
 
-- story: search player path
+- story: find_information_short path
   steps:
+  - intent: help
+  - action: utter_send_help
+  - intent: find_info
+  - action: action_find_info
+  - action: action_choose_info
+  - intent: info-player
+  - action: action_info_player
+  - action: action_choose_info
+
+- story: find_teams_short_help path
+  steps:
+  - intent: help
+  - action: utter_send_help
+  - intent: find_team
+  - action: action_find_team
+
+- story: fallback_info path3
+  steps: 
   - intent: greet
   - action: utter_greet
-  - intent: search_player
-  - action: action_search_player
-  - action: utter_did_that_help
-  - intent: deny
-  - action: utter_goodbye  
+  - intent: help
+  - action: utter_send_help
+
+- story: out_of_scope path
+  steps:
+  - intent: out_of_scope
+  - action: action_my_fallback

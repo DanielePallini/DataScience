@@ -4,9 +4,9 @@ Questa repository racchiude 5 diversi progetti svolti per il corso di Data Scien
 ## Indice
 1. [Qlik Tableau PowerBI](#qlik-tableau-powerbi)
 2. [Chatbot](#chatbot)
-3. [BERT - Sentiment Analysis](#bert)
-4. [Social Network Analysis](#sns)
-5. [Classificazione, Clustering e Time Series Analysis](#ccts)
+3. [Sentiment Analysis](#sentiment-analysis)
+4. [Social Network Analysis](#social-network-analysis)
+5. [Classificazione, Clustering e Time Series Analysis](#classificazione-clustering-e-time-series-analysis)
    
 Di seguito verrà fatta una breve descrizione dei 5 progetti:
 
@@ -33,7 +33,7 @@ informazioni per costruire le risposte saranno recuperate da Transfermarkt, il
 sito più conosciuto e affidabile per quanto riguarda il mondo del calcio e tutto
 ciò a esso collegato. Verrà utilizzato il framework **RASA**.
 
-## BERT - Sentiment Analysis
+## Sentiment Analysis
 Addestramento di un modello di NLP (Natural Language Processing) su un
 dataset contenente recensioni di film, al fine di distinguere i commenti positivi da
 quelli negativi. Si effettuerà un’operazione di fine tuning per preparare il
